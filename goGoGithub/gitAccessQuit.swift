@@ -8,9 +8,5 @@
 
 import UIKit
 
-class GitAccessQuit {
-
-let gitHubClientID = "c1d72a641847d7af50b6"
-let gitHubClientSecret = "bc343c0c8a176cc541102b9eeccf4281a13f67ae"
-
-}
+let kGitHubClientID = "c1d72a641847d7af50b6"
+let kGitHubClientSecret = "3508345d2d5641e6ecf19ee9e18201f7aa3ac8bd"

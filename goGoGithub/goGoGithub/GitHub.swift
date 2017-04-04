@@ -26,10 +26,6 @@ enum SaveOption {
 
 class GitHub {
     
-    let gitHubClientID = "c1d72a641847d7af50b6"
-    let gitHubClientSecret = "bc343c0c8a176cc541102b9eeccf4281a13f67ae"
-    
-    
     static let shared = GitHub()
     
     func oAuthRequestWith(parameters: [String: String]) {
@@ -42,7 +38,7 @@ class GitHub {
         print("Parameter String: \(parametersString)")
         
         //? denotes clients ID
-        if let requestURL = URL(string: "\(kOAuthBaseUrlString)authorize?client_id=\(gitHubClientID)\(parametersString)") {
+        if let requestURL = URL(string: "\(kOAuthBaseUrlString)authorize?client_id=\(kGitHubClientID)\(parametersString)") {
             
             print(requestURL.absoluteString)
             
@@ -50,13 +46,13 @@ class GitHub {
             
         }
     }
-    func getCodeFrom(url: URL) throws -> String {
+    private func getCodeFrom(url: URL) throws -> String {
         
         guard let code = url.absoluteString.components(separatedBy: "=").last else {
             throw GitHubAuthError.extractingCode
         }
         
-        return (code)
+        return code
     }
     
     func tokenRequestFor(url: URL, saveOptions : SaveOption, completion: @escaping  GitHubOAuthCompletion) {
@@ -70,8 +66,7 @@ class GitHub {
         do {
             
             let code = try getCodeFrom(url: url)
-            
-            let requestString = "\(kOAuthBaseUrlString)access_token?cient_id=\(gitHubClientID)&client_secret+\(gitHubClientSecret)&code=\(code)"
+            let requestString = "\(kOAuthBaseUrlString)access_token?client_id=\(kGitHubClientID)&client_secret=\(kGitHubClientSecret)&code=\(code)"
             
             if let requestURL = URL(string: requestString) {
                 
@@ -84,17 +79,14 @@ class GitHub {
                     guard let data = data else { complete(success: false); return }
                     
                     if let dataString = String(data: data, encoding: .utf8){
-                        
-                        print(dataString)
-                        
+                        if saveOptions == .userDefaults {
+                            UserDefaults.standard.save(accessToken: dataString)
+                        }
                         complete(success: true)
-                        
                     }
-                    
                 }).resume() //common bug, tells data task to execute or resume//
                 
             }
-            
         } catch {
             print(error)
             complete(success: false)

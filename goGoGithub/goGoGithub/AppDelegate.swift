@@ -19,22 +19,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    // being called when coming back from a third party app
+    // with url
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        
     
-    
-        
-        let code = try? GitHub.shared.getCodeFrom(url: url)
-        
-    
-        print(code)
-        
-        GitHub.shared.tokenRequestFor(url: url, saveOptions: .userDefaults) { (success) in
-            
-            if success {
-                print("YAY! Access Token")
-            } else {
-                print("Bummer!!! No Success")
+        // check if access token is already in the user default
+        // if it is NOT, request it.
+        if UserDefaults.standard.getAccessToken() == nil {
+            GitHub.shared.tokenRequestFor(url: url, saveOptions: .userDefaults) { (success) in
+                
+                if success {
+                    print("YAY! Access Token")
+                } else {
+                    print("Bummer!!! No Success")
+                }
             }
         }
         
