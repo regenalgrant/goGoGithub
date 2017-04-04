@@ -38,7 +38,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOP-Ro-2kj">
-                                <rect key="frame" x="165.5" y="512" width="44" height="33"/>
+                                <rect key="frame" x="166" y="512" width="44" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Reset">
@@ -63,11 +63,19 @@
                                     <action selector="loginPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lfN-Iv-77Y"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4NU-sS-WxI">
+                                <rect key="frame" x="100" y="189" width="175" height="107"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="107" id="N2G-3u-c8o"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="CSE-6v-l5f" firstAttribute="top" secondItem="4NU-sS-WxI" secondAttribute="bottom" id="2lc-Au-qMa"/>
                             <constraint firstItem="csF-r1-TG7" firstAttribute="top" secondItem="DOP-Ro-2kj" secondAttribute="bottom" constant="20" id="4WA-8E-kXX"/>
                             <constraint firstItem="DOP-Ro-2kj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8eY-Fr-f3K"/>
+                            <constraint firstItem="4NU-sS-WxI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="84" id="AXm-MC-gH4"/>
                             <constraint firstItem="CSE-6v-l5f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Btx-ME-lT5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CSE-6v-l5f" secondAttribute="trailing" constant="16" id="Lps-R9-KMb"/>
                             <constraint firstItem="CSE-6v-l5f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="M3Y-Yx-XAf"/>
@@ -75,9 +83,11 @@
                             <constraint firstItem="CSE-6v-l5f" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QSe-mR-9bB"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="csF-r1-TG7" secondAttribute="bottom" constant="27" id="rzK-iM-9tI"/>
                             <constraint firstItem="csF-r1-TG7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="tWF-ef-8eA"/>
+                            <constraint firstItem="4NU-sS-WxI" firstAttribute="centerX" secondItem="CSE-6v-l5f" secondAttribute="centerX" id="wFj-ih-okB"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="gitLogoImage" destination="4NU-sS-WxI" id="9R8-gy-jOW"/>
                         <outlet property="loginButton" destination="csF-r1-TG7" id="1rW-E6-xgC"/>
                     </connections>
                 </viewController>

@@ -34,6 +34,7 @@ class GitHubAuthController: UIViewController {
 
         
     }
+    @IBOutlet weak var gitLogoImage: UIImageView!
     
     @IBAction func loginPress(_ sender: Any) {
         let parameters = ["scope" : "email,user,repo"]
