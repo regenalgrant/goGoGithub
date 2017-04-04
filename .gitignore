@@ -152,5 +152,7 @@ playground.xcworkspace
 # For more information about the recommended setup visit:
 # https://docs.fastlane.tools/best-practices/source-control/#source-control
 
+#other swift file with credentials
+gitAccessQuit.swift
 
 # End of https://www.gitignore.io/api/osx,swift,macos,objective-c
