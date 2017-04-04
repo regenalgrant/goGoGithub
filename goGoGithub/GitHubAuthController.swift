@@ -14,6 +14,7 @@ class GitHubAuthController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loginButton.backgroundColor = UIColor.purple
+        
     }
     
     override func viewDidLoad() {

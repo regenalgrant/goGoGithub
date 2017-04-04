@@ -64,7 +64,6 @@
 				9912CF181E93F45900F43AA4 /* Models */,
 				9912CF171E93F3FC00F43AA4 /* Controllers */,
 				9912CF161E93F3F000F43AA4 /* Views */,
-				9912CEFF1E92B1DA00F43AA4 /* Main.storyboard */,
 			);
 			path = goGoGithub;
 			sourceTree = "<group>";
@@ -73,9 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				9912CF071E92B1DA00F43AA4 /* Info.plist */,
-				9912CF041E92B1DA00F43AA4 /* LaunchScreen.storyboard */,
 				9912CF021E92B1DA00F43AA4 /* Assets.xcassets */,
-				9912CEFB1E92B1DA00F43AA4 /* AppDelegate.swift */,
 			);
 			name = Support;
 			path = goGoGithub;
@@ -84,6 +81,8 @@
 		9912CF161E93F3F000F43AA4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9912CF041E92B1DA00F43AA4 /* LaunchScreen.storyboard */,
+				9912CEFF1E92B1DA00F43AA4 /* Main.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -91,7 +90,6 @@
 		9912CF171E93F3FC00F43AA4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9912CF0E1E92C91500F43AA4 /* GitHub.swift */,
 				9912CF121E92EC1D00F43AA4 /* FoundationExtensions.swift */,
 				9912CF101E92CE6D00F43AA4 /* GitHubAuthController.swift */,
 			);
@@ -101,6 +99,8 @@
 		9912CF181E93F45900F43AA4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9912CEFB1E92B1DA00F43AA4 /* AppDelegate.swift */,
+				9912CF0E1E92C91500F43AA4 /* GitHub.swift */,
 				9912CF141E93013B00F43AA4 /* gitAccessQuit.swift */,
 			);
 			name = Models;
