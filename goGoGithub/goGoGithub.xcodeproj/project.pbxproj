@@ -15,6 +15,9 @@
 		9912CF111E92CE6D00F43AA4 /* GitHubAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912CF101E92CE6D00F43AA4 /* GitHubAuthController.swift */; };
 		9912CF131E92EC1D00F43AA4 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912CF121E92EC1D00F43AA4 /* FoundationExtensions.swift */; };
 		9912CF151E93013B00F43AA4 /* gitAccessQuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912CF141E93013B00F43AA4 /* gitAccessQuit.swift */; };
+		9912CF1A1E940C0B00F43AA4 /* RepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912CF191E940C0B00F43AA4 /* RepoViewController.swift */; };
+		9912CF1C1E940D5700F43AA4 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912CF1B1E940D5700F43AA4 /* UIExtensions.swift */; };
+		9912CF1E1E94195A00F43AA4 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912CF1D1E94195A00F43AA4 /* Repository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		9912CF101E92CE6D00F43AA4 /* GitHubAuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitHubAuthController.swift; path = ../GitHubAuthController.swift; sourceTree = "<group>"; };
 		9912CF121E92EC1D00F43AA4 /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
 		9912CF141E93013B00F43AA4 /* gitAccessQuit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = gitAccessQuit.swift; path = ../gitAccessQuit.swift; sourceTree = "<group>"; };
+		9912CF191E940C0B00F43AA4 /* RepoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoViewController.swift; sourceTree = "<group>"; };
+		9912CF1B1E940D5700F43AA4 /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		9912CF1D1E94195A00F43AA4 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,8 @@
 		9912CEFA1E92B1DA00F43AA4 /* goGoGithub */ = {
 			isa = PBXGroup;
 			children = (
+				9912CF1B1E940D5700F43AA4 /* UIExtensions.swift */,
+				9912CF191E940C0B00F43AA4 /* RepoViewController.swift */,
 				9912CF181E93F45900F43AA4 /* Models */,
 				9912CF171E93F3FC00F43AA4 /* Controllers */,
 				9912CF161E93F3F000F43AA4 /* Views */,
@@ -99,6 +107,7 @@
 		9912CF181E93F45900F43AA4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9912CF1D1E94195A00F43AA4 /* Repository.swift */,
 				9912CEFB1E92B1DA00F43AA4 /* AppDelegate.swift */,
 				9912CF0E1E92C91500F43AA4 /* GitHub.swift */,
 				9912CF141E93013B00F43AA4 /* gitAccessQuit.swift */,
@@ -179,8 +188,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9912CF1C1E940D5700F43AA4 /* UIExtensions.swift in Sources */,
 				9912CF131E92EC1D00F43AA4 /* FoundationExtensions.swift in Sources */,
 				9912CF151E93013B00F43AA4 /* gitAccessQuit.swift in Sources */,
+				9912CF1E1E94195A00F43AA4 /* Repository.swift in Sources */,
+				9912CF1A1E940C0B00F43AA4 /* RepoViewController.swift in Sources */,
 				9912CF0F1E92C91500F43AA4 /* GitHub.swift in Sources */,
 				9912CF111E92CE6D00F43AA4 /* GitHubAuthController.swift in Sources */,
 				9912CEFC1E92B1DA00F43AA4 /* AppDelegate.swift in Sources */,

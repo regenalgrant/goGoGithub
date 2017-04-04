@@ -12,6 +12,7 @@ import UIKit
 let kOAuthBaseUrlString = "https://github.com/login/oauth/"
 
 typealias GitHubOAuthCompletion = (Bool) -> ()
+typealias FetchReposCompletion = ([Repository]?) -> ()
 
 enum GitHubAuthError : Error {
     case extractingCode
@@ -26,7 +27,24 @@ enum SaveOption {
 
 class GitHub {
     
+    private var session: URLSession
+    private var components: URLComponents
+    
+    
     static let shared = GitHub()
+    
+    private init(){
+        
+        self.session = URLSession(configuration: .default)
+        self.components =  URLComponents()
+        
+        self.components.scheme = "https"
+        self.components.host = "api.github.com"
+        if let token = UserDefaults.standard.getAccessToken() {
+            let queryItem = URLQueryItem(name: "access_token", value: token)
+            self.components.queryItems = [queryItem]
+        }
+    }
     
     func oAuthRequestWith(parameters: [String: String]) {
         var parametersString = ""
@@ -79,8 +97,13 @@ class GitHub {
                     guard let data = data else { complete(success: false); return }
                     
                     if let dataString = String(data: data, encoding: .utf8){
+                        
                         if saveOptions == .userDefaults {
-                            UserDefaults.standard.save(accessToken: dataString)
+                            if let token = self.accessTokenFrom(dataString) {
+                                if UserDefaults.standard.save(accessToken: token) {
+                                    print("Saved to user default")
+                                }
+                            }
                         }
                         complete(success: true)
                     }
@@ -94,5 +117,65 @@ class GitHub {
         
         
     }
-
+    
+    func getRepos(completion: @escaping FetchReposCompletion) {
+        
+        func returnToMain(results: [Repository]?){
+            OperationQueue.main.addOperation {
+                completion(results)
+                
+            }
+        }
+        self.components.path = "/user/repos"
+        
+        guard let url = self.components.url else { returnToMain(results: nil); return }
+        
+        self.session.dataTask(with: url) {(data, response, error) in
+            
+            if error != nil { returnToMain(results: nil); return }
+            
+            if let data = data {
+                
+                var repositories = [Repository]()
+                
+                do {
+                    
+                    if let rootJson = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)as? [[String : Any]] {
+                        print(rootJson)
+                        for repositoryJSON in rootJson{
+                            if let repo = Repository(json: repositoryJSON) {
+                                
+                                repositories.append(repo)
+                            }
+                        }
+                        returnToMain(results: repositories)
+                    }
+                    
+                } catch {
+                    
+                }
+                
+            }
+            
+            }.resume()
+        
+    }
+    
+    func accessTokenFrom(_ string: String) -> String? {
+        print(string)
+        
+        if string.contains("access_token") {
+            let components = string.components(separatedBy: "&")
+            for component in components {
+                print(component)
+                
+                if component.contains("access_token") {
+                    let token = component.components(separatedBy: "=").last
+                    
+                    return token
+                }
+            }
+        }
+        return nil
+    }
 }
