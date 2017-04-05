@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F43c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="E0M-vq-rfq">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Git Hub Auth Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GitHubAuthController" id="BYZ-38-t0r" customClass="GitHubAuthController" customModule="goGoGithub" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,153 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSE-6v-l5f">
+                                <rect key="frame" x="32" y="296" width="311" height="75"/>
+                                <color key="backgroundColor" red="0.59999999999999998" green="0.0" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="2v9-ok-p4g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="PRINT TOKEN">
+                                    <color key="titleColor" red="1" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="printTokenPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WJS-8I-11a"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOP-Ro-2kj">
+                                <rect key="frame" x="166" y="512" width="44" height="33"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HMh-Hp-F3p"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csF-r1-TG7">
+                                <rect key="frame" x="32" y="565" width="311" height="75"/>
+                                <color key="backgroundColor" red="0.59999999999999998" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="wXC-3s-S9h"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="LOGIN">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lfN-Iv-77Y"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-App-60x60" translatesAutoresizingMaskIntoConstraints="NO" id="4NU-sS-WxI">
+                                <rect key="frame" x="100" y="189" width="175" height="107"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="107" id="N2G-3u-c8o"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CSE-6v-l5f" firstAttribute="top" secondItem="4NU-sS-WxI" secondAttribute="bottom" id="2lc-Au-qMa"/>
+                            <constraint firstItem="csF-r1-TG7" firstAttribute="top" secondItem="DOP-Ro-2kj" secondAttribute="bottom" constant="20" id="4WA-8E-kXX"/>
+                            <constraint firstItem="DOP-Ro-2kj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8eY-Fr-f3K"/>
+                            <constraint firstItem="4NU-sS-WxI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="84" id="AXm-MC-gH4"/>
+                            <constraint firstItem="CSE-6v-l5f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Btx-ME-lT5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CSE-6v-l5f" secondAttribute="trailing" constant="16" id="Lps-R9-KMb"/>
+                            <constraint firstItem="CSE-6v-l5f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="M3Y-Yx-XAf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="csF-r1-TG7" secondAttribute="trailing" constant="16" id="MAP-1q-CIf"/>
+                            <constraint firstItem="CSE-6v-l5f" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QSe-mR-9bB"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="csF-r1-TG7" secondAttribute="bottom" constant="27" id="rzK-iM-9tI"/>
+                            <constraint firstItem="csF-r1-TG7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="tWF-ef-8eA"/>
+                            <constraint firstItem="4NU-sS-WxI" firstAttribute="centerX" secondItem="CSE-6v-l5f" secondAttribute="centerX" id="wFj-ih-okB"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gitLogoImage" destination="4NU-sS-WxI" id="9R8-gy-jOW"/>
+                        <outlet property="loginButton" destination="csF-r1-TG7" id="1rW-E6-xgC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-210.40000000000001" y="122.78860569715144"/>
+        </scene>
+        <!--Repo View Controller-->
+        <scene sceneID="ck9-xk-8DY">
+            <objects>
+                <viewController id="E0M-vq-rfq" customClass="RepoViewController" customModule="goGoGithub" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5WU-dg-lua"/>
+                        <viewControllerLayoutGuide type="bottom" id="WYy-ok-hTF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="loT-eK-AW4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LNF-J2-WaM">
+                                <rect key="frame" x="16" y="68" width="343" height="531"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="0.80000000000000004" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <searchBar key="tableFooterView" contentMode="redraw" id="jhG-GG-Dxm" userLabel="searchBar">
+                                    <rect key="frame" x="0.0" y="70" width="343" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PrototypeCells" textLabel="dTZ-6l-V2o" imageView="zLS-Gx-xuJ" rowHeight="42" style="IBUITableViewCellStyleDefault" id="5HU-Zm-rlo" customClass="RepoTableViewCell" customModule="goGoGithub" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="42"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5HU-Zm-rlo" id="MqH-ae-Dd1">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="41"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dTZ-6l-V2o">
+                                                    <rect key="frame" x="70" y="0.0" width="258" height="41"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Icon-App-40x40" id="zLS-Gx-xuJ">
+                                                    <rect key="frame" x="15" y="0.0" width="40" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="343" id="8u8-c1-93i"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LNF-J2-WaM" firstAttribute="trailing" secondItem="loT-eK-AW4" secondAttribute="trailingMargin" id="1cT-9j-YSW"/>
+                            <constraint firstItem="LNF-J2-WaM" firstAttribute="centerY" secondItem="loT-eK-AW4" secondAttribute="centerY" id="MsF-df-AEB"/>
+                            <constraint firstItem="LNF-J2-WaM" firstAttribute="top" secondItem="5WU-dg-lua" secondAttribute="bottom" constant="48" id="Pda-N0-f67"/>
+                            <constraint firstItem="LNF-J2-WaM" firstAttribute="leading" secondItem="loT-eK-AW4" secondAttribute="leadingMargin" id="pHW-rY-6s8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="RepoSearchBar" destination="jhG-GG-Dxm" id="BC3-Qj-1jn"/>
+                        <outlet property="RepoTableViewCell" destination="jhG-GG-Dxm" id="EDn-Dz-V16"/>
+                        <outlet property="searchBar" destination="jhG-GG-Dxm" id="nA9-3J-d9q"/>
+                        <outlet property="tableView" destination="LNF-J2-WaM" id="Tbv-3K-FWK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BxG-tl-Re0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="584.79999999999995" y="122.78860569715144"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Icon-App-40x40" width="40" height="40"/>
+        <image name="Icon-App-60x60" width="60" height="60"/>
+    </resources>
 </document>
