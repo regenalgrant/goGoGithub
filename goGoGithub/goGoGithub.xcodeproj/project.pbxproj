@@ -18,6 +18,7 @@
 		9912CF1A1E940C0B00F43AA4 /* RepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912CF191E940C0B00F43AA4 /* RepoViewController.swift */; };
 		9912CF1C1E940D5700F43AA4 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912CF1B1E940D5700F43AA4 /* UIExtensions.swift */; };
 		9912CF1E1E94195A00F43AA4 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9912CF1D1E94195A00F43AA4 /* Repository.swift */; };
+		99F365B41E946B4F0086F668 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F365B31E946B4F0086F668 /* RepoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		9912CF191E940C0B00F43AA4 /* RepoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoViewController.swift; sourceTree = "<group>"; };
 		9912CF1B1E940D5700F43AA4 /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		9912CF1D1E94195A00F43AA4 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		99F365B31E946B4F0086F668 /* RepoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			children = (
 				9912CF041E92B1DA00F43AA4 /* LaunchScreen.storyboard */,
 				9912CEFF1E92B1DA00F43AA4 /* Main.storyboard */,
+				99F365B31E946B4F0086F668 /* RepoTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				9912CF151E93013B00F43AA4 /* gitAccessQuit.swift in Sources */,
 				9912CF1E1E94195A00F43AA4 /* Repository.swift in Sources */,
 				9912CF1A1E940C0B00F43AA4 /* RepoViewController.swift in Sources */,
+				99F365B41E946B4F0086F668 /* RepoTableViewCell.swift in Sources */,
 				9912CF0F1E92C91500F43AA4 /* GitHub.swift in Sources */,
 				9912CF111E92CE6D00F43AA4 /* GitHubAuthController.swift in Sources */,
 				9912CEFC1E92B1DA00F43AA4 /* AppDelegate.swift in Sources */,

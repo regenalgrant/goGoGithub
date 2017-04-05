@@ -14,7 +14,9 @@ class GitHubAuthController: UIViewController {
     func updateUI() {
         if let _ = UserDefaults.standard.getAccessToken() {
             loginButton.isEnabled = false
+            
         } else {
+            
             loginButton.isEnabled = true
         }
     }
@@ -34,8 +36,7 @@ class GitHubAuthController: UIViewController {
 
         
     }
-    @IBOutlet weak var gitLogoImage: UIImageView!
-    
+
     @IBAction func loginPress(_ sender: Any) {
         let parameters = ["scope" : "email,user,repo"]
         GitHub.shared.oAuthRequestWith(parameters: parameters)

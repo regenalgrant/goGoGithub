@@ -10,18 +10,37 @@ import UIKit
 
 class RepoViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    var allRepos = [Respository]() {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
+    var displayRepos : [Repository]? {
+        didSet {
+            self.tableView.reloadData()
+            
+        }
+    }
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    @IBOutlet weak var tableView: UITableView!
 
-        // Do any additional setup after loading the view.
+    override func viewDidLoad() {
+        super.viewdDidLoad()
+        
+        self.tableView.dataSource = self
+        self.searchBar.delegate = self
+        
         update()
     }
+
     func update() {
     print("update repo controller here!")
         GitHub.shared.getRepos {(repositories) in
             // print(repositories?.first)update tableview homework
         }
     }
-
 
 }
