@@ -17,14 +17,19 @@ class Repository {
     // could be nil
     let description: String?
     let language: String?
+    let repoUrlString: String
     
     init?(json: [String: Any]){
-        if let name = json["name"] as? String, let createdDate = json["created_at"] as? String, let numOfStars = json["stargazers_count"] as? Int, let isForked = json["fork"] as? Bool {
+        if let name = json["name"] as? String,
+            let createdDate = json["created_at"] as? String,
+            let numOfStars = json["stargazers_count"] as? Int,
+            let isForked = json["fork"] as? Bool {
             
             self.name = name
             self.createdDate = createdDate
             self.numOfStars = numOfStars
             self.isForked = isForked
+            self.repoUrlString = json["html_url"] as? String ?? "https://www.github.com"
             
             if let description = json["description"] as? String {
                 self.description = description
@@ -35,7 +40,7 @@ class Repository {
             if let language = json["language"] as? String {
                 self.language = language
             } else {
-                self.language = "Undefined language"
+                self.language = "Undfined language"
             }
         } else {
             return nil

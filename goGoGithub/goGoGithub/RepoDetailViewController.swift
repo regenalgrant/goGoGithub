@@ -7,29 +7,76 @@
 //
 
 import UIKit
+import SafariServices
 
 class RepoDetailViewController: UIViewController {
+    
+    var repo : Repository!
+    
+    @IBOutlet weak var nameLabel: UILabel!
 
+    @IBOutlet weak var descriptionLabel: UILabel!
+
+    @IBOutlet weak var languageLabel: UILabel!
+    
+    @IBOutlet weak var starsLabel: UILabel!
+    
+    @IBOutlet weak var forkedLabel: UILabel!
+    
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        nameLabel.text = repo.name
+        descriptionLabel.text = repo.description
+        languageLabel.text = repo.language
+        starsLabel.text = "Stars: \(repo.numOfStars)"
+        forkedLabel.text = "forked: \(repo.isForked)"
+        dateLabel.text = repo.createdDate
     }
-
-
+    
+    
+    @IBAction func moreDetailPressed(_ sender: Any) {
+        guard let repo = repo else { return }
+        
+        presentWebViewControllerWith(urlString: repo.repoUrlString)
+        
+    }
+    
+    func presentSafariViewControllerWith(urlString: String){
+        
+        guard let url = URL(string: urlString) else { return }
+        
+        let safariController = SFSafariViewController(url: url)
+        self.present(safariController, animated: true, completion: nil)
+        
+    }
+    
+    func presentWebViewControllerWith(urlString: String){
+        let webController = WebViewController()
+        webController.url = urlString
+        
+        self.present(webController, animated: true, completion: nil)
+    }
+    
+    @IBAction func donePressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
-//Layout your TableViewCells as Nibs and create a subclass called RepositoryCell instead of using the Basic UITableViewCell.
-//Your Nib should have UILabels for 3 pieces of data from the Repository:
-//Repo Name
-//Repo Description
-//Repo Language
-//Create RepoDetailViewController that will display Repository information.
-//Implement the dismissal of the RepoDetailViewController.
-//Your RepoDetailViewController should display at least these 6 pieces of data from the Repository:
-//Repo Name
-//Repo Description
-//Programming Language
-//Number Of Stars
-//isFork: True or False
-//createdAt: Date
-//Create custom UIViewController Transition from HomeViewController to RepoDetailViewController.
+
+//extension RepoDetailViewController: UIViewControllerTransitioningDelegate {
+//    
+//    func animationController(forPresented presented: UIViewController, presenting:
+//        UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        return CustomTransition()
+//        
+//    }
+//    
+//    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        return CustomTransition()
+//    }
+//        
+//}
+
+
