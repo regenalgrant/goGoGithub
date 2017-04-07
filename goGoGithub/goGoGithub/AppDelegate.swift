@@ -46,6 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    
     // being called when coming back from a third party app
     // with url
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
