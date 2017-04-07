@@ -19,7 +19,7 @@ class Repository {
     let language: String?
     let repoUrlString: String
     
-    init?(json: [String: Any]){
+    init?(json: [String: Any]) {
         if let name = json["name"] as? String,
             let createdDate = json["created_at"] as? String,
             let numOfStars = json["stargazers_count"] as? Int,
