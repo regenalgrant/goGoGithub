@@ -64,8 +64,13 @@ extension RepoViewController: UIViewControllerTransitioningDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
+        guard let destination = segue.destination as? RepoDetailViewController else { return }
+
         if segue.identifier == RepoDetailViewController.identifier {
-            segue.destination.transitioningDelegate = self
+            destination.transitioningDelegate = self
+            if let selectedIndex = tableView.indexPathForSelectedRow {
+                destination.repo = self.allRepos[selectedIndex.row]
+            }
         }
     }
 }
@@ -79,7 +84,7 @@ extension RepoViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: RepositoryCell.identifier, for: indexPath) as! RepositoryCell
         
         
-        
+        cell.repo = self.allRepos[indexPath.row]
         return cell
     }
     

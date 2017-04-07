@@ -17,6 +17,15 @@ class RepositoryCell: UITableViewCell {
     
     @IBOutlet weak var LanguageCell: UILabel!
     
+    var repo: Repository? {
+        didSet {
+            guard let repo = repo else { return }
+            self.NameCell.text = repo.name
+            self.DescriptionCell.text = repo.description
+            self.LanguageCell.text = repo.language
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

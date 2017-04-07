@@ -26,7 +26,7 @@ class CustomTransition: NSObject, UIViewControllerAnimatedTransitioning {
             toViewController.view.alpha = 0.0
         UIView.animate(withDuration: self.duration, animations: {
             
-            toViewController.view.alpha = 0.1
+            toViewController.view.alpha = 1.0
             
         }) { (finished) in
             transitionContext.completeTransition(true)

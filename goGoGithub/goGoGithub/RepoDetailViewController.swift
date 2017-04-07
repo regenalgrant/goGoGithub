@@ -40,7 +40,8 @@ class RepoDetailViewController: UIViewController {
     @IBAction func moreDetailPressed(_ sender: Any) {
         guard let repo = repo else { return }
         
-        presentWebViewControllerWith(urlString: repo.repoUrlString)
+//        presentWebViewControllerWith(urlString: repo.repoUrlString)
+        presentSafariViewControllerWith(urlString: repo.repoUrlString)
         
     }
     
@@ -52,31 +53,10 @@ class RepoDetailViewController: UIViewController {
         self.present(safariController, animated: true, completion: nil)
         
     }
-    
-    func presentWebViewControllerWith(urlString: String){
-        let webController = WebViewController()
-        webController.url = urlString
-        
-        self.present(webController, animated: true, completion: nil)
-    }
+
     
     @IBAction func donePressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
 }
-
-//extension RepoDetailViewController: UIViewControllerTransitioningDelegate {
-//    
-//    func animationController(forPresented presented: UIViewController, presenting:
-//        UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        return CustomTransition()
-//        
-//    }
-//    
-//    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        return CustomTransition()
-//    }
-//        
-//}
-
 
